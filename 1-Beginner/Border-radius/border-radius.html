@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        
+        <!--
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/dark-hive/jquery-ui.css">
+        
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        -->
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+
+    </head>
+    <body style="background-color: #333;">
+        <div style="height: 100px;">
+            <h2 style="color: #CCC;">Boder Radius(%):</h2>
+        </div>
+        
+
+        <div style="height: 500px;">
+
+            <input id="E" type="number" placeholder="E" value=0 style="position: absolute;top:120px;left:150px;width: 50px;">
+            <input id="A" type="number" placeholder="A" value=0 style="position: absolute;top:100px;left:210px;width: 50px;">
+            
+            <input id="F" type="number" placeholder="F" value=0 style="position: absolute;top:120px;left:650px;width: 50px;">
+            <input id="B" type="number" placeholder="B" value=0 style="position: absolute;top:100px;left:590px;width: 50px;">
+            
+            <div id="border-radius-preview" style="border: 20px solid rgb(119, 96, 2); background-color: #fc0;
+                                                    margin-left: 200px;position: absolute;
+                                                    width: 400px; height: 400px;">
+            </div>
+            
+            <input id="H" type="number" placeholder="H" value=0 style="position: absolute;top:540px;left:150px;width: 50px;">
+            <input id="D" type="number" placeholder="D" value=0 style="position: absolute;top:560px;left:210px;width: 50px;">
+
+            <input id="G" type="number" placeholder="G" value=0 style="position: absolute;top:540px;left:650px;width: 50px;">
+            <input id="C" type="number" placeholder="C" value=0 style="position: absolute;top:560px;left:590px;width: 50px;">
+        
+        </div>
+        <div>
+            <textarea id="result" style="height: 100px;width: 400px;">teste221</textarea>
+        </div>
+        
+        <script>
+            $(document).ready(function(){
+                $('input').change(function() {
+                    var result = {
+                        "border-top-left-radius": $("#A").val()+'% '+$("#E").val()+'%',
+                        "border-top-right-radius": $("#B").val()+'% '+$("#F").val()+'%',
+                        "border-bottom-left-radius": $("#C").val()+'% '+$("#G").val()+'%',
+                        "border-bottom-right-radius": $("#D").val()+'% '+$("#H").val()+'%'     
+                    }
+                    $("#border-radius-preview").css(result);
+                    $("#result").text(
+                        "border-top-left-radius: "+$("#A").val()+"% "+$("#E").val()+"%;\n"+
+                        "border-top-right-radius: "+$("#B").val()+"% "+$("#F").val()+"%;\n"+
+                        "border-bottom-left-radius: "+$("#C").val()+"% "+$("#G").val()+"%;\n"+
+                        "border-bottom-right-radius: "+$("#D").val()+"% "+$("#H").val()+"%\n"
+                    )
+                });
+            });
+        </script>
+    </body>
+</html>
